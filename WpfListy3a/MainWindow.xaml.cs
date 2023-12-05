@@ -21,16 +21,31 @@ namespace WpfListy3a
     public partial class MainWindow : Window
     {
         public List<String> Teksty { get; set; } 
+        public List<Produkt> Produkty { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            przygotujDane();
+
             Teksty = new List<String>();
             Teksty.Add("pierwszy zapis");
             Teksty.Add("drugi zapis");
             Teksty.Add("cokolwiek");
             lista3.ItemsSource = Teksty;
-            DataContext = this;
+            DataContext = this;//musi być do bindowania elementów o dostępie public
 
+        }
+        private void przygotujDane()
+        {
+            Produkty = new List<Produkt>();
+            Produkty.Add(new Produkt("długopis", 10, "niebieski zmazywalny"));
+            Produkty.Add(new Produkt("długopis", 10, "czarny niezmazywalny"));
+            Produkty.Add(new Produkt("ołówek", 2, "HB"));
+            Produkty.Add(new Produkt("ołówek", 2, "B"));
+            Produkty.Add(new Produkt("ołówek", 2, "2B"));
+            Produkty.Add(new Produkt("ołówek", 2, "3B"));
+            Produkty.Add(new Produkt("ołówek", 2, "H"));
+            Produkty.Add(new Produkt("ołówek", 2, "2H"));
         }
 
     }

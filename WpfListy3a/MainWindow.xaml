@@ -31,6 +31,9 @@
                         x:Name="lista3">
                         
                     </ItemsControl>
+                    <ItemsControl ItemsSource="{Binding Path = Produkty}">
+                        
+                    </ItemsControl>
                 </StackPanel>
             </TabItem>
             <TabItem Header="ListBox">
