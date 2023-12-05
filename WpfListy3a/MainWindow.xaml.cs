@@ -22,6 +22,7 @@ namespace WpfListy3a
     {
         public List<String> Teksty { get; set; } 
         public List<Produkt> Produkty { get; set; }
+        public Produkt ZaznaczonyProdukt { get; set; }
         public MainWindow()
         {
             InitializeComponent();
@@ -30,6 +31,12 @@ namespace WpfListy3a
             Teksty = new List<String>();
             Teksty.Add("pierwszy zapis");
             Teksty.Add("drugi zapis");
+            Teksty.Add("cokolwiek");
+            Teksty.Add("cokolwiek");
+            Teksty.Add("cokolwiek");
+            Teksty.Add("cokolwiek");
+            Teksty.Add("cokolwiek");
+            Teksty.Add("cokolwiek");
             Teksty.Add("cokolwiek");
             lista3.ItemsSource = Teksty;
             DataContext = this;//musi być do bindowania elementów o dostępie public

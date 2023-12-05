@@ -48,10 +48,42 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="ListBox">
-                
+                <StackPanel>
+                    <ListBox ItemsSource="{Binding Teksty}"/>
+                    <Separator/>
+                    <ListBox ItemsSource="{Binding Produkty}"
+                             SelectedItem="{Binding ZaznaczonyProdukt}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding Nazwa}"/>
+                                    <TextBlock Text="{Binding Cena}" 
+                                               Margin="10"/>
+                                    <TextBlock Text="{Binding Opis}"
+                                               Foreground="Brown"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Separator/>
+                    <TextBlock x:Name="zaznaczony" Text="{Binding ZaznaczonyProdukt.Name}"/>
+
+                </StackPanel>
             </TabItem>
             <TabItem Header="ListView">
-                
+                <ListView ItemsSource="{Binding Produkty}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Nazwa}"/>
+                                <TextBlock Text="{Binding Cena}" 
+                                               Margin="10"/>
+                                <TextBlock Text="{Binding Opis}"
+                                               Foreground="Brown"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </TabItem>
             <TabItem Header="DataGrid">
                 
