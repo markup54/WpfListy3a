@@ -71,6 +71,7 @@
                 </StackPanel>
             </TabItem>
             <TabItem Header="ListView">
+                <StackPanel>
                 <ListView ItemsSource="{Binding Produkty}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -84,9 +85,60 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+                    <Separator/>
+                    <Separator/>
+                    <ListView ItemsSource="{Binding Produkty}"
+                              SelectedItem="{Binding ZaznaczonyProdukt}"
+                              SelectionMode="Multiple">
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="True">
+                                <GridViewColumn
+                                    DisplayMemberBinding="{Binding Nazwa}"
+                                    Header="Nazwa Produktu"/>
+                                <GridViewColumn
+                                    DisplayMemberBinding="{Binding Cena}"
+                                    Header="Cena Produktu"/>
+                                <GridViewColumn
+                                    DisplayMemberBinding="{Binding Opis}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+            </StackPanel>
             </TabItem>
             <TabItem Header="DataGrid">
-                
+                <StackPanel>
+                <DataGrid ItemsSource="{Binding Produkty}"
+                          CanUserAddRows="True"
+                          CanUserDeleteRows="True"
+                          IsReadOnly="False"
+                          CanUserResizeColumns="True"
+                          CanUserSortColumns="False"
+                          AlternatingRowBackground="Aqua"
+                          AlternationCount="3"
+                          RowBackground="Beige">
+                    
+                </DataGrid>
+                    <Separator/>
+                    <Separator/>
+                    <DataGrid x:Name="dataGridProdukty"
+                              AutoGenerateColumns="False"
+                              GridLinesVisibility="Vertical">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nazwa Produktu"
+                                                Binding="{Binding Nazwa}"/>
+                            <DataGridTextColumn Header="Opis"
+                                                Binding="{Binding Opis}"/>
+                            <DataGridCheckBoxColumn
+                                Header="Dostępność"
+                                Binding="{Binding Dostepny}"/>
+                            <DataGridComboBoxColumn
+                                Header="Kategoria"
+                                x:Name="nazwaKategorii"
+                                SelectedItemBinding="{Binding KategoriaProduktu}"/>
+                        </DataGrid.Columns>
+                        
+                    </DataGrid>
+                </StackPanel>
             </TabItem>
         </TabControl>
         

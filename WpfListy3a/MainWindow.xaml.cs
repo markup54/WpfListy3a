@@ -40,7 +40,7 @@ namespace WpfListy3a
             Teksty.Add("cokolwiek");
             lista3.ItemsSource = Teksty;
             DataContext = this;//musi być do bindowania elementów o dostępie public
-
+            dataGridProdukty.ItemsSource = Produkty;
         }
         private void przygotujDane()
         {
@@ -53,6 +53,11 @@ namespace WpfListy3a
             Produkty.Add(new Produkt("ołówek", 2, "3B"));
             Produkty.Add(new Produkt("ołówek", 2, "H"));
             Produkty.Add(new Produkt("ołówek", 2, "2H"));
+            Produkty.Add(new Produkt("ołówek", 3, "3H",false));
+            Produkty.Add(new Produkt("zeszyt", 2, "w linie",true, "Papiernicze"));
+            Produkty.Add(new Produkt("zeszyt", 2, "w kratkę",true, "Papiernicze"));
+            Produkty.Add(new Produkt("farby", 20, "kolorowe",true, "Artystyczne"));
+            nazwaKategorii.ItemsSource = new List<String>() { "Papiernicze", "Przybory", "Artystyczne" };
         }
 
     }
