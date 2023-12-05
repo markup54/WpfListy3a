@@ -31,8 +31,19 @@
                         x:Name="lista3">
                         
                     </ItemsControl>
+                    <Separator/>
                     <ItemsControl ItemsSource="{Binding Path = Produkty}">
-                        
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding Nazwa}"/>
+                                    <TextBlock Text="{Binding Cena}" 
+                                               Margin="10"/>
+                                    <TextBlock Text="{Binding Opis}"
+                                               Foreground="Brown"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </StackPanel>
             </TabItem>
