@@ -18,6 +18,20 @@
                         <Label Content=" ContentControl"/>
                     </StackPanel>
                 </TabItem.Header>
+                <StackPanel>
+                <ItemsControl>
+                    <Label>Pierwszy element</Label>
+                    <Label>Drugi element</Label>
+                    <Label>Trzeci element</Label>
+                </ItemsControl>
+                    <ItemsControl ItemsSource="{Binding Teksty}">
+                        
+                    </ItemsControl>
+                    <ItemsControl
+                        x:Name="lista3">
+                        
+                    </ItemsControl>
+                </StackPanel>
             </TabItem>
             <TabItem Header="ListBox">
                 
